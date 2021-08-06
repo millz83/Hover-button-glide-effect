@@ -1,0 +1,57 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: rgb(39,39,39);
+}
+
+a {
+    border:3px solid  green;
+    font-size: 28px;
+    padding:40px 80px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:green;
+    letter-spacing: 6px;
+    transition:all 0.5s;
+    position: relative;
+    overflow: hidden;
+
+}
+
+a:before {
+    content:"";
+    height:100%;
+    width:120px;
+    background-color: pink;
+    position: absolute;
+    top:0;
+    left:0;
+    transform:skew(-15deg);
+    z-index: -1;
+    transition:all 1s;
+    transform-origin: left;
+    animation: moving 1.8s infinite linear;
+
+
+}
+
+@keyframes moving {
+    0% {
+        left:-120px;
+    }
+    100% {
+        left:100%;   
+     }
+}
+
+a:hover::before {
+transform:skew(0);
+width:100%;
+animation: none;
+}
+
+
+
+}
